@@ -41,10 +41,10 @@ def get_input(turn, action):
 				return action
 			else:
 				print "That is not a valid move! Please try again.\n"
-				# print_instruction()
+				print_instruction()
 				return -1
 		except Exception as e:
-			# print action + " is not a valid move! Please try again.\n"
+			print action + " is not a valid move! Please try again.\n"
 			print e
 			return -1
 
@@ -64,7 +64,6 @@ def reset_game(msg):
 	print msg
 	board = []
 	setBoard()
-	print 'board: ', board
 	print_board([2,3,4,5,6,7,8,9,10])
 
 
@@ -74,17 +73,11 @@ def setBoard():
 		board.append(-1)
 
 def try_move(turn, action):
-	# Get player input
-	print 'trying move'
 	user = get_input(turn, action)
-	# print turn
-	# print action
-	print user
 	if(user == -1):
 		return -1
 	if board[user] != -1:
 		print "Invalid move! Cell already taken. Please try again.\n"
 		return -1
-		#user = get_input(turn, action)
 	board[user] = 1 if turn == 'X' else 0
 	return 0
