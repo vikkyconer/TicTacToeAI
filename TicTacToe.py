@@ -29,7 +29,7 @@ def print_board(board):
 
 def print_instruction():
 	print "Please use the following cell numbers to make your move"
-	print_board([2,3,4,5,6,7,8,9,10])
+	# print_board([2,3,4,5,6,7,8,9,10])
 
 
 def get_input(turn, action):
@@ -40,11 +40,11 @@ def get_input(turn, action):
 			if action in actions:
 				return action
 			else:
-				print "That is not a valid move! Please try again.\n"
-				print_instruction()
+				# print "That is not a valid move! Please try again.\n"
+				# print_instruction()
 				return -1
 		except Exception as e:
-			print action + " is not a valid move! Please try again.\n"
+			# print action + " is not a valid move! Please try again.\n"
 			print e
 			return -1
 
@@ -60,11 +60,11 @@ def check_win(board):
 
 def reset_game(msg):
 	global board
-	print_board(board)
+	# print_board(board)
 	print msg
 	board = []
 	setBoard()
-	print_board([2,3,4,5,6,7,8,9,10])
+	# print_board([2,3,4,5,6,7,8,9,10])
 
 
 def setBoard():
@@ -77,7 +77,7 @@ def try_move(turn, action):
 	if(user == -1):
 		return -1
 	if board[user] != -1:
-		print "Invalid move! Cell already taken. Please try again.\n"
+		# print "Invalid move! Cell already taken. Please try again.\n"
 		return -1
 	board[user] = 1 if turn == 'X' else 0
 	return 0
